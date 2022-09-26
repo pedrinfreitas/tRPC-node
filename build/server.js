@@ -39,6 +39,7 @@ const trpcExpress = __importStar(require("@trpc/server/adapters/express"));
 const express_1 = __importDefault(require("express"));
 const express_2 = require("trpc-playground/handlers/express");
 const router_1 = __importDefault(require("./router"));
+const port = process.env.PORT || 3333;
 const apiEndpoint = "/trpc";
 const playgroundEndpoint = "/playground";
 const runApp = () => __awaiter(void 0, void 0, void 0, function* () {
@@ -52,6 +53,6 @@ const runApp = () => __awaiter(void 0, void 0, void 0, function* () {
         playgroundEndpoint,
         router: router_1.default,
     }));
-    app.listen(3000, () => console.log("deu certo!"));
+    app.listen(port, () => console.log("deu certo!"));
 });
 runApp();

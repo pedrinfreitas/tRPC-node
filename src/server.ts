@@ -4,6 +4,7 @@ import { expressHandler } from 'trpc-playground/handlers/express';
 
 import router from './router';
 
+const port = process.env.PORT || 3333;
 const apiEndpoint = "/trpc";
 const playgroundEndpoint = "/playground";
 
@@ -27,7 +28,7 @@ const runApp = async () => {
     })
   );
 
-  app.listen(3000, () => console.log("deu certo!"));
+  app.listen(port, () => console.log("deu certo!"));
 };
 
 runApp();
